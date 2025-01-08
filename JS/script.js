@@ -11,21 +11,24 @@ function toggleMode() {
 
     html.classList.toggle("light");
 
-    if (html.classList.contains("light")) {
-        img.setAttribute("src", "../Assets/avatar-light.png");
-    } else {
-        img.setAttribute("src", "../Assets/avatar.png");
-    }
+    img.style.opacity = "0";
 
-    if (html.classList.contains("light")) {
-        img.setAttribute(
-            "alt",
-            "Foto de perfil de André Melchior do tema claro"
-        );
-    } else {
-        img.setAttribute(
-            "alt",
-            "Foto de perfil de André Melchior do tema escuro"
-        );
-    }
+    setTimeout(() => {
+        if (html.classList.contains("light")) {
+            img.setAttribute("src", "../Assets/avatar-light.png");
+            img.setAttribute(
+                "alt",
+                "Foto de perfil de André Melchior do tema claro"
+            );
+        } else {
+            img.setAttribute("src", "../Assets/avatar.png");
+            img.setAttribute(
+                "alt",
+                "Foto de perfil de André Melchior do tema escuro"
+            );
+        }
+
+        // Restaura a opacidade para 1
+        img.style.opacity = "1";
+    }, 150);
 }

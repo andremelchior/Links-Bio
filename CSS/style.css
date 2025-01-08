@@ -72,11 +72,16 @@ body * {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    animation: slide-out 0.3s;
+    transition: outline 0.2s;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in 0.4s forwards; /*forwards mantém as propriedades de to{...} em keyframes*/
 }
 
 #switch span {
@@ -98,6 +103,7 @@ body * {
 
 #profile img {
     width: 112px;
+    transition: opacity 0.1s ease-in-out;
     transition: all 0.5s;
 }
 
@@ -191,5 +197,25 @@ footer a:hover {
 
     .light {
         --bg-url: url(../Assets/bg-desktop-light.jpg);
+    }
+}
+
+/*animation*/
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
