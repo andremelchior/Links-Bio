@@ -15,13 +15,13 @@ function toggleMode() {
 
     setTimeout(() => {
         if (html.classList.contains("light")) {
-            img.setAttribute("src", "../Assets/avatar-light.png");
+            img.setAttribute("src", "./Assets/avatar-light.png");
             img.setAttribute(
                 "alt",
                 "Foto de perfil de André Melchior do tema claro"
             );
         } else {
-            img.setAttribute("src", "../Assets/avatar.png");
+            img.setAttribute("src", "./Assets/avatar.png");
             img.setAttribute(
                 "alt",
                 "Foto de perfil de André Melchior do tema escuro"
